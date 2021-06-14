@@ -1,2 +1,2 @@
-# AI_training_hsdp
-HSDP AI training service 
+# AI_training_test
+Test AI Training Service
