@@ -31,7 +31,7 @@ class Score:
     # Function to get the model
     def load(self):
 
-        model_path = load_model(os.path.join(os.environ['MODEL_PATH'], 'kerasDigitRecognizer.h5')) 
+        model_path = load_model(os.path.join(os.environ['MODEL_PATH'], 'keras-digit-recognizer.h5')) 
         model_path.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
         print("Loaded model from sagemaker")
 
