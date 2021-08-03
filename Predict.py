@@ -8,6 +8,8 @@ def install(package):
 install("keras")
 install("tensorflow")
 install("Pillow")
+install("numpy")
+install("pandas")
 
 import numpy as np
 from PIL import Image
@@ -18,6 +20,7 @@ import argparse
 import os 
 from tensorflow.keras.preprocessing.image import load_img
 from tensorflow.keras.preprocessing.image import img_to_array
+import pandas as pd
 
 class Score:
     """
@@ -58,6 +61,21 @@ if __name__ == "__main__":
     score = Score()
     score.load()
     img = os.path.join(os.environ['DATA_PATH'], 'four.jpg')
+
+    print('Input path',img)
+
+    out = os.path.join(os.environ['OUTPUT_PATH'], 'output.csv')
+
+    print('Output Path', out)
+
+    # initialize list of lists
+    data = [['tom', 10], ['nick', 15], ['juli', 14]]
+    
+    # Create the pandas DataFrame
+    df = pd.DataFrame(data, columns = ['Name', 'Age'])
+
+    df.to_csv(out)
+    print('csv saved')
 
     testInput_processed = score.load_image(img)
 
